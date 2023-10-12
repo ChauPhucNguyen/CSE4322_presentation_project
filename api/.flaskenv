@@ -1,0 +1,2 @@
+FLASK_APP=descriptive_statistics_api.py
+FLASK_ENV=production
