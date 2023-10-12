@@ -2,6 +2,7 @@
   "name": "probability-library",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://infinite-brushlands-08126-775fc2bfc1ed.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -41,6 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://127.0.0.1:5000"
+  }
 }
