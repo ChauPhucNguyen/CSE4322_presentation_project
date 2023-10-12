@@ -1,1 +1,1 @@
-web: gunicorn descriptive_statistics_api:app
+web:gunicorn descriptive_statistics_api:app
