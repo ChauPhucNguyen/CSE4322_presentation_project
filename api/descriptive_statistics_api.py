@@ -17,7 +17,7 @@ def get_median():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('./')
+@app.route('/')
 @cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
