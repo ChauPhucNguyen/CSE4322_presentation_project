@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import './input.css'
+import Header from './Components/Header.js';
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -15,6 +17,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Header/>
       <header className="App-header bg-red-300">
 
         ... no changes in this part ...

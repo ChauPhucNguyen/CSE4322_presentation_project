@@ -1309,6 +1309,18 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.51.0.tgz#6d419c240cfb2b66da37df230f7e7eef801c32fa"
   integrity sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==
 
+"@headlessui/react@^1.7.17":
+  version "1.7.17"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.17.tgz#a0ec23af21b527c030967245fd99776aa7352bc6"
+  integrity sha512-4am+tzvkqDSSgiwrsEpGWqgGo9dz8qU5M3znCkC4PgkpY4HcCZzEDEvozltGGGHIKl9jbXbZPSH5TWn4sWJdow==
+  dependencies:
+    client-only "^0.0.1"
+
+"@heroicons/react@^2.0.18":
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.18.tgz#f80301907c243df03c7e9fd76c0286e95361f7c1"
+  integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
+
 "@heroku-cli/color@1.1.14":
   version "1.1.14"
   resolved "https://registry.yarnpkg.com/@heroku-cli/color/-/color-1.1.14.tgz#035ac4e48e564fcab37c3dc4bd09dbe596f2ad68"
@@ -1332,6 +1344,7 @@
     tslib "^1.9.3"
 
 "@heroku-cli/command-v9@npm:@heroku-cli/command@^9.0.2", "@heroku-cli/command@^9.0.2":
+  name "@heroku-cli/command-v9"
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/@heroku-cli/command/-/command-9.0.2.tgz#2e0d454fd60bde395c05872335b62b654cc640e7"
   integrity sha512-Qdm3gPfl0SAjKnQk8GVrjwDAzyv9bo1zxvIOW5OAWRsgC4xP0vjsxKv14I/SF715dM0sN14Llpxv0kmzYglkZA==
@@ -2021,6 +2034,7 @@
     tslib "^2.6.1"
 
 "@oclif/core-v1@npm:@oclif/core@^1.26.2", "@oclif/core@1.26.2", "@oclif/core@^1.1.1", "@oclif/core@^1.2.0", "@oclif/core@^1.25.0", "@oclif/core@^1.26.2":
+  name "@oclif/core-v1"
   version "1.26.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.26.2.tgz#763c68dc91388225acd6f0819c90f93e5d8cde41"
   integrity sha512-6jYuZgXvHfOIc9GIaS4T3CIKGTjPmfAxuMcbCbMRKJJl4aq/4xeRlEz0E8/hz8HxvxZBGvN2GwAUHlrGWQVrVw==
@@ -4289,6 +4303,11 @@ cli-width@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-3.0.0.tgz#a2f48437a2caa9a22436e794bf071ec9e61cedf6"
   integrity sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==
+
+client-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
+  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 cliui@^7.0.2:
   version "7.0.4"
