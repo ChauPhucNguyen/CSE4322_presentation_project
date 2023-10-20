@@ -6,33 +6,75 @@
   height: 40vmin;
   pointer-events: none;
 } */
+:root {
+  --primary-color: #382933;
+  --secondary-color: #3B5249;
+  --accent-color: #519872;
+  --text-color: #E6E6FA;
+  --text-accent-color: #382933;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.App {
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+}
+.navbar {
+  color: #3B5249;
+}
+.bio-section-wrapper,.functions-wrapper,.right-section,.left-section {
+  background-color: var(--secondary-color); /* Background color */
+  padding: 20px; /* Padding around the content */
+  border: 1px solid var(--accent-color); /* Border with a light gray color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+  max-width: 95%; /* Set a maximum width to limit the content's width */
+  margin: 0 auto; /* Center the container horizontally on the page */
+}
+.bio-section {
+  text-align: center;
+}
+.bio-title {
+  margin: 0; /* Remove default margins to ensure consistent spacing */
+  font-size: 2em;
+}
+.bio-bio {
+  font-size: 1em;
+  line-height: 1.5;
+}
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.Descriptive-Stats-Wrapper {
+  background-color: var(--primary-color);
+}
+.descriptive-user-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  justify-content: space-between;
+  /* background-color: blue; */
+  margin: 0 auto;
 }
-
-.App-link {
-  color: #61dafb;
+.right-section,.left-section {
+  /* background-color: var(--secondary-color); */
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  padding: 20px;
+  width: 48%;
+  border: 1px solid var(--accent-color);
+  margin-bottom: 1%
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.data-input-wrapper {
+  color: black;
+}
+.functions-wrapper {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+.text-box {
+  width: 100%;
+}

@@ -1,3 +1,16 @@
+# Project 3 README
+
+# Architecture
+API folder
+- Where you will find the python probability functions
+    -  descriptive_statistics_api.py
+- Must run python file and reactJS in parallel to get client and host connection.
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

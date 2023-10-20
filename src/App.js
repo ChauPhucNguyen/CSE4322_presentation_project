@@ -1,30 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import './input.css'
+import './input.css';
+import './DescriptiveStatsPage.js'
 import Header from './Components/Header.js';
+import DescriptiveStatsPage from './DescriptiveStatsPage.js';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
-  const [currentMedian, setMedian] = useState(0);
-
-  useEffect(() => {
-    fetch('/descriptivestats').then(res => res.json())
-    .then(data => { setCurrentTime(data.time); });
-  }, []);
-  useEffect(() => {
-    fetch('/median').then(res => res.json())
-    .then(data => { setMedian(data.median); });
-  }, []);
   return (
     <div className="App">
       <Header/>
-      <header className="App-header bg-red-300">
+      <DescriptiveStatsPage/>
 
-        ... no changes in this part ...
-
-        <p>the median is {currentMedian}</p>
-        <p>The current time is {currentTime}.</p>
-      </header>
     </div>
   );
 }

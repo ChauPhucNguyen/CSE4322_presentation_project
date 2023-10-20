@@ -17,7 +17,7 @@ def get_current_time():
 @cross_origin
 def array_post():
   if request.method=='POST':
-    a=request.form.getlist("contacts[]")
+    a=request.get_json()
     for x in a:
       print(x)
   return ""
@@ -31,31 +31,31 @@ def get_median():
 # Arithmetic Mean
 @app.route('/mean', methods=['GET','POST'])
 @cross_origin()
-def get_median():
+def get_mean():
     return {'median': 10}
 
 # Mode
-@app.route('/mean', methods=['GET','POST'])
+@app.route('/mode', methods=['GET','POST'])
 @cross_origin()
-def get_median():
+def get_mode():
     return {'median': 10}
 
 # Sample Range
-@app.route('/mean', methods=['GET','POST'])
+@app.route('/range', methods=['GET','POST'])
 @cross_origin()
-def get_median():
+def get_range():
     return {'median': 10}
 
 # Population Variance
-@app.route('/mean', methods=['GET','POST'])
+@app.route('/variance', methods=['GET','POST'])
 @cross_origin()
-def get_median():
+def get_variance():
     return {'median': 10}
 
 # Standard Deviation
-@app.route('/mean', methods=['GET','POST'])
+@app.route('/standarddeviation', methods=['GET','POST'])
 @cross_origin()
-def get_median():
+def get_deviation():
     return {'median': 10}
 
 
