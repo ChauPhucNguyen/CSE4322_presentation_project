@@ -1,81 +1,72 @@
 import time
-from flask import Flask, send_from_directory,request
+import numpy as np
+from scipy import stats
+from flask import Flask, send_from_directory,request, jsonify
 from flask_cors import CORS, cross_origin
-
 
 app = Flask(__name__,static_folder='./build', static_url_path='')
 CORS(app)
 
-# Descriptive Satistic Functions
-
-@app.route('/descriptivestats', methods=['GET','POST'])
-@cross_origin()
-def get_current_time():
-    return {'time': time.time()}
-
-@app.route("/array_post",methods=['GET','POST'])
-@cross_origin
-def array_post():
-  if request.method=='POST':
-    a=request.get_json()
-    for x in a:
-      print(x)
-  return ""
-
-# Population Median
-@app.route('/median', methods=['GET','POST'])
-@cross_origin()
-def get_median():
-    return {'median': 10}
-
-# Arithmetic Mean
-@app.route('/mean', methods=['GET','POST'])
+@app.route('/mean', methods=['POST'])
 @cross_origin()
 def get_mean():
-    return {'median': 10}
+    data = request.get_json()
+    mean = np.mean(data)
+    return jsonify(mean)
 
-# Mode
-@app.route('/mode', methods=['GET','POST'])
+@app.route('/median', methods=['POST'])
+@cross_origin()
+def get_median():
+    data = request.get_json()
+    median = np.median(data)
+    return jsonify(median)
+
+@app.route('/mode', methods=['POST'])
 @cross_origin()
 def get_mode():
-    return {'median': 10}
+    data = request.get_json()
+    mode = stats.mode(data)
+    return jsonify(mode.mode[0])
 
-# Sample Range
-@app.route('/range', methods=['GET','POST'])
+@app.route('/range', methods=['POST'])
 @cross_origin()
 def get_range():
-    return {'median': 10}
+    data = request.get_json()
+    range_ = np.ptp(data)
+    return jsonify(range_)
 
-# Population Variance
-@app.route('/variance', methods=['GET','POST'])
+@app.route('/variance', methods=['POST'])
 @cross_origin()
 def get_variance():
-    return {'median': 10}
+    data = request.get_json()
+    variance = np.var(data)
+    return jsonify(variance)
 
-# Standard Deviation
-@app.route('/standarddeviation', methods=['GET','POST'])
+@app.route('/sample_variance', methods=['POST'])
 @cross_origin()
-def get_deviation():
-    return {'median': 10}
+def get_sample_variance():
+    data = request.get_json()
+    sample_variance = np.var(data, ddof=1)
+    return jsonify(sample_variance)
 
+@app.route('/standard_deviation', methods=['POST'])
+@cross_origin()
+def get_standard_deviation():
+    data = request.get_json()
+    standard_deviation = np.std(data)
+    return jsonify(standard_deviation)
 
+@app.route('/coefficient_of_variation', methods=['POST'])
+@cross_origin()
+def get_coefficient_of_variation():
+    data = request.get_json()
+    coefficient_of_variation = stats.variation(data)
+    return jsonify(coefficient_of_variation)
 
 @app.route('/')
 @cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
-
-
-
-
-# Quartiles
-# Extras 
-# Weighted Arithmetic Mean (Maybe not based on Design)
-
-# Geometric Mean (Same as before)
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
