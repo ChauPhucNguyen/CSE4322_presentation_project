@@ -1,9 +1,9 @@
 // NumberInput.js
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 function NumberInput({ onArrayChange }) {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [numbersArray, setNumbersArray] = useState([]);
 
   const handleInputChange = (e) => {
@@ -11,7 +11,7 @@ function NumberInput({ onArrayChange }) {
   };
 
   const convertToNumberArray = () => {
-    const stringArray = inputValue.split(',');
+    const stringArray = inputValue.split(",");
     const numberArray = stringArray.map((str) => parseFloat(str.trim()));
     setNumbersArray(numberArray);
 
@@ -22,9 +22,9 @@ function NumberInput({ onArrayChange }) {
   // ... (rest of the component)
 
   return (
-    <div className='data-input-wrapper'>
+    <div className="data-input-wrapper">
       <input
-        className='text-box'
+        className="text-box"
         type="text"
         placeholder="Enter numbers separated by commas"
         value={inputValue}
@@ -32,7 +32,7 @@ function NumberInput({ onArrayChange }) {
       />
       <button onClick={convertToNumberArray}>Convert to Array</button>
       <div>
-        <p>Resulting Array: {numbersArray.join(', ')}</p>
+        <p>Resulting Array: {numbersArray.join(", ")}</p>
       </div>
     </div>
   );

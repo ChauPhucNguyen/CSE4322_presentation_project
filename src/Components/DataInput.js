@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function DataInput({ setNumbersArray }) {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
   const convertToNumberArray = () => {
-    const stringArray = inputValue.split(',');
+    const stringArray = inputValue.split(",");
     const numberArray = stringArray.map((str) => parseFloat(str.trim()));
+    console.log(stringArray, numberArray);
     setNumbersArray(numberArray);
   };
 
   return (
-    <div className='data-input-wrapper'>
+    <div className="data-input-wrapper">
       <input
-        className='text-box'
+        className="text-box"
         type="text"
         placeholder="Enter numbers separated by commas"
         value={inputValue}
