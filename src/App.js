@@ -3,6 +3,7 @@ import './App.css';
 import './input.css';
 import Header from './Components/Header.js';
 import DescriptiveStatsPage from './DescriptiveStatsPage.js';
+import Footer from './Components/Footer'
 
 function App() {
   const [numbersArray, setNumbersArray] = useState([]);
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Header/>
       <DescriptiveStatsPage numbersArray={numbersArray} setNumbersArray={setNumbersArray}/>
+      <Footer/> 
     </div>
   );
 }
