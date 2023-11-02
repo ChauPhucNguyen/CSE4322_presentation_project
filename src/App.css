@@ -36,7 +36,27 @@
   max-width: 95%; /* Set a maximum width to limit the content's width */
   margin: 0 auto; /* Center the container horizontally on the page */
 }
-
+.main-footer{ /* VN */
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  padding: 30px;
+  position: relative;
+  border-top: 1px solid var(--accent-color);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+  margin: 0 auto; /* Center the container horizontally on the page */
+  margin-top: 2%
+}
+.column { /* VN */
+  float: left;
+  width: 50%;
+  padding: 2px;
+}
+/* Clear floats after the columns */
+.row:after { /* VN */
+  content: "";
+  display: table;
+  clear: both;
+}
 .bio-section {
   text-align: center;
 }

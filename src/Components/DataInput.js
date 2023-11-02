@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import DisplayArray from './DisplayArray';
 
-function DataInput() {
+function DataInput({ setNumbersArray }) {
   const [inputValue, setInputValue] = useState('');
-  const [numbersArray, setNumbersArray] = useState([]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -25,9 +23,6 @@ function DataInput() {
         onChange={handleInputChange}
       />
       <button onClick={convertToNumberArray}>Convert to Array</button>
-      <div>
-        <DisplayArray array={numbersArray}/>
-      </div>
     </div>
   );
 }

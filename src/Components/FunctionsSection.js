@@ -2,45 +2,128 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import '../input.css'
 
-// Functions Section: Where you call your back-end formulas from the front-end.
-// They will go in the <ul> as a new list item 
-// "<li> Function Name = {Function formula} = {call you useStateFunction} </li>"
-
-
-
-
-function FunctionsSection() {
-
-  const [currentTime, setCurrentTime] = useState(0);
-  const [currentMedian, setMedian] = useState(0);
-  
+function FunctionsSection({ numbersArray }) {
+  const [mean, setMean] = useState(0);
+  const [median, setMedian] = useState(0);
+  const [mode, setMode] = useState(0);
+  const [range, setRange] = useState(0);
+  const [variance, setVariance] = useState(0);
+  const [sampleVariance, setSampleVariance] = useState(0);
+  const [standardDeviation, setStandardDeviation] = useState(0);
+  const [coefficientOfVariation, setCoefficientOfVariation] = useState(0);
 
   useEffect(() => {
-    fetch('/descriptivestats').then(res => res.json())
-    .then(data => { setCurrentTime(data.time); });
-  }, []);
-  useEffect(() => {
-    fetch('/median').then(res => res.json())
-    .then(data => { setMedian(data.median); });
-  }, []);
-  return (
+      fetch('/mean', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(numbersArray),
+      })
+      .then(response => response.json())
+      .then(data => setMean(data));
+  }, [numbersArray]);
 
-      <div className='functions-section'>
-        <h2>Functions:</h2>
-        <h3>Measures of Location:</h3>
-        <ul>
-            <li>Population Mean = </li>
-            <li>Median = {currentMedian}</li>
-            <li>Mode = </li>
-        </ul>
-        <h3>Measures of Variability</h3>
-        <ul>
-            <li>Population Variance = </li>
-            <li>Standard deviation =  </li>
-            <li>Coefficient of Variation</li>
-        </ul>
-      </div>
-  );
+  useEffect(() => {
+      fetch('/median', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(numbersArray),
+      })
+      .then(response => response.json())
+      .then(data => setMedian(data));
+  }, [numbersArray]);
+
+  useEffect(() => {
+      fetch('/mode', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(numbersArray),
+      })
+      .then(response => response.json())
+      .then(data => setMode(data));
+  }, [numbersArray]);
+
+  useEffect(() => {
+      fetch('/range', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(numbersArray),
+      })
+      .then(response => response.json())
+      .then(data => setRange(data));
+  }, [numbersArray]);
+
+  useEffect(() => {
+      fetch('/variance', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(numbersArray),
+      })
+      .then(response => response.json())
+      .then(data => setVariance(data));
+  }, [numbersArray]);
+
+  useEffect(() => {
+    fetch('/sample_variance', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(numbersArray),
+    })
+    .then(response => response.json())
+    .then(data => setSampleVariance(data));
+}, [numbersArray]);
+
+useEffect(() => {
+    fetch('/standard_deviation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(numbersArray),
+    })
+    .then(response => response.json())
+    .then(data => setStandardDeviation(data));
+}, [numbersArray]);
+
+useEffect(() => {
+fetch('/coefficient_of_variation', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(numbersArray),
+})
+.then(response => response.json())
+.then(data => setCoefficientOfVariation(data));
+}, [numbersArray]);
+
+return (
+<div className='functions-section'>
+    <h2>Functions:</h2>
+    <h3>Measures of Location:</h3>
+    <ul>
+        <li>Mean: {mean}</li>
+        <li>Median: {median}</li>
+        <li>Mode: {mode}</li>
+        <li>Range: {range}</li>
+        <li>Variance: {variance}</li>
+        <li>Sample Variance: {sampleVariance}</li>
+        <li>Standard Deviation: {standardDeviation}</li>
+        <li>Coefficient of Variation: {coefficientOfVariation}</li>
+    </ul>
+</div>
+);
 }
 
 export default FunctionsSection;
