@@ -36,6 +36,7 @@
   max-width: 95%; /* Set a maximum width to limit the content's width */
   margin: 0 auto; /* Center the container horizontally on the page */
 }
+
 .bio-section {
   text-align: center;
 }
