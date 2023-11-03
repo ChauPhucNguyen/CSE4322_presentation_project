@@ -5,8 +5,12 @@ import PageBio from './Components/PageBio.js';
 import bioData from './Components/bios';
 import DataInput from './Components/DataInput';
 import FunctionsSection from './Components/FunctionsSection';
+import DisplayArray from './Components/DisplayArray';
+
+
 
 function DescriptiveStatsPage({ numbersArray, setNumbersArray }) {
+
   return (
     <div className="Descriptive-Stats-Wrapper">
       <PageBio bios={bioData[0]}/>
@@ -15,6 +19,7 @@ function DescriptiveStatsPage({ numbersArray, setNumbersArray }) {
           <h2>Input User data separated using comma:</h2>
           <p>Example Input: 1,50,30,10,45</p>
           <DataInput setNumbersArray={setNumbersArray}/>
+          <DisplayArray array={numbersArray}/>
         </section>
         <section className='right-section'>
           <h2>Graphs from user input:</h2>
