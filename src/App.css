@@ -36,6 +36,9 @@
   max-width: 95%; /* Set a maximum width to limit the content's width */
   margin: 0 auto; /* Center the container horizontally on the page */
 }
+.functions-wrapper{
+  min-height: 55vh; /* alter this if it is not big enough to fill the whole page */
+}
 .main-footer{ /* VN */
   color: var(--text-color);
   background-color: var(--secondary-color);
