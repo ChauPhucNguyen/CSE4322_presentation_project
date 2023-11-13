@@ -10,9 +10,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
       <DescriptiveStatsPage numbersArray={numbersArray} setNumbersArray={setNumbersArray}/>
-      <Footer/> 
+      <Footer /> 
     </div>
   );
 }

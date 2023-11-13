@@ -1,11 +1,12 @@
-/* .App {
-  text-align: center;
+.App {
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
 :root {
   --primary-color: #382933;
   --secondary-color: #3B5249;
@@ -35,16 +36,20 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
   max-width: 95%; /* Set a maximum width to limit the content's width */
   margin: 0 auto; /* Center the container horizontally on the page */
+
 }
+
 .main-footer{ /* VN */
   color: var(--text-color);
   background-color: var(--secondary-color);
   padding: 30px;
-  position: relative;
+  /* position: relative; */
   border-top: 1px solid var(--accent-color);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
   margin: 0 auto; /* Center the container horizontally on the page */
-  margin-top: 2%
+  bottom : 0;
+  position : fixed;
+  width: 100%;
 }
 .column { /* VN */
   float: left;
@@ -72,6 +77,7 @@
 
 .Descriptive-Stats-Wrapper {
   background-color: var(--primary-color);
+  padding-bottom: 200px;
 }
 .descriptive-user-container {
   display: flex;
@@ -95,6 +101,7 @@
 .functions-wrapper {
   background-color: var(--text-color);
   color: var(--primary-color);
+  overflow-y: auto;
 }
 .text-box {
   width: 100%;

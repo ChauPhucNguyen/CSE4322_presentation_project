@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://127.0.0.1:5000",
   "dependencies": {
-    "@carbon/charts-react": "1.13.6",
+    "@carbon/charts-react": "^1.13.7",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@testing-library/jest-dom": "^5.17.0",

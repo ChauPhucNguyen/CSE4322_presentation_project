@@ -3,6 +3,7 @@ import numpy as np
 from scipy import stats
 from flask import Flask, send_from_directory,request, jsonify
 from flask_cors import CORS, cross_origin
+import statistics
 
 app = Flask(__name__,static_folder='./build', static_url_path='')
 CORS(app)
@@ -26,13 +27,13 @@ def get_median():
 def get_mode():
     data = request.get_json()
     mode = stats.mode(data)
-    return jsonify(mode.mode[0])
+    return jsonify(statistics.mode(data))
 
 @app.route('/range', methods=['POST'])
 @cross_origin()
 def get_range():
     data = request.get_json()
-    range_ = np.ptp(data)
+    range_ = np.max(data)-np.min(data)
     return jsonify(range_)
 
 @app.route('/variance', methods=['POST'])
