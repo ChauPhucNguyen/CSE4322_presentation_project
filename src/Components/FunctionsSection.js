@@ -126,20 +126,21 @@ function FunctionsSection({ numbersArray }) {
     res += "]";
     return res;
   };
-
+  const boldTextStyle = {fontWeight: 'bold'};
   return (
     <div className="functions-section">
-      <h2>
+      <h1 className="functions-title">Functions</h1>
+      <h3 style={boldTextStyle}>
         Processed array (negative number and non-number excluded):{" "}
         {sortArray(numbersArray)}
-      </h2>
-      <h2>Functions:</h2>
-      <h3>Measures of Location:</h3>
+      </h3>
+      <h3 style={boldTextStyle}>Measures of Location:</h3>
       <ul>
         <li>Mean: {mean}</li>
         <li>Median: {median}</li>
         <li>Mode: {mode}</li>
-        <li>Range: {range}</li>
+        {/* <li>Range: {range}</li> */}
+        <h2 style={boldTextStyle}>Measures of Variability</h2>
         <li>Variance: {variance}</li>
         <li>Sample Variance: {sampleVariance}</li>
         <li>Standard Deviation: {standardDeviation}</li>

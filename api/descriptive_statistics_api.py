@@ -33,7 +33,7 @@ def get_mode():
 @cross_origin()
 def get_range():
     data = request.get_json()
-    range_ = np.max(data)-np.min(data)
+    range_ = np.max(data)
     return jsonify(range_)
 
 @app.route('/variance', methods=['POST'])

@@ -38,6 +38,9 @@ body {
   margin: 0 auto; /* Center the container horizontally on the page */
 
 }
+.functions-wrapper{
+  min-height: 55vh; /* alter this if it is not big enough to fill the whole page */
+}
 
 .main-footer{ /* VN */
   color: var(--text-color);
@@ -64,14 +67,20 @@ body {
 }
 .bio-section {
   text-align: center;
+  /* background-color: red; */
 }
-.bio-title {
+.bio-title,.functions-title {
   margin: 0; /* Remove default margins to ensure consistent spacing */
   font-size: 2em;
 }
 .bio-bio {
   font-size: 1em;
   line-height: 1.5;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  /* background-color: blue; */
+  margin: 0 auto;
 }
 
 
