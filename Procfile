@@ -1,2 +1,2 @@
-web:gunicorn descriptive_statistics_api:app
+worker: gunicorn descriptive_statistics_api:app
 web: npm start
