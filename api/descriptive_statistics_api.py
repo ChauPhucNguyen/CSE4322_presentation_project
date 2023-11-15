@@ -5,7 +5,7 @@ from flask import Flask, send_from_directory,request, jsonify
 from flask_cors import CORS, cross_origin
 import statistics
 
-app = Flask(__name__,static_folder='./build', static_url_path='')
+app = Flask(__name__,static_folder='../build', static_url_path='')
 CORS(app)
 
 @app.route('/mean', methods=['POST'])
