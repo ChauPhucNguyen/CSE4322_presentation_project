@@ -30,8 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-api": "cd api && flask test",
-    "eject": "react-scripts eject",
-    "heroku": "git add . && git commit -m 'test' && git push --set-upstream https://github.com/nguyenducphucc/dup master"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
