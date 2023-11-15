@@ -2,7 +2,6 @@
   "name": "probability-library",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "@carbon/charts-react": "^1.13.7",
     "@headlessui/react": "^1.7.17",
@@ -31,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-api": "cd api && flask test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku": "git add . && git commit -m 'test' && git push --set-upstream https://github.com/nguyenducphucc/dup master"
   },
   "eslintConfig": {
     "extends": [

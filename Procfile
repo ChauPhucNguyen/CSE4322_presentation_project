@@ -1,2 +1,2 @@
-worker: python3 ./api/descriptive_statistics_api.py
+web: gunicorn descriptive_statistics_api:app
 web: npm start
